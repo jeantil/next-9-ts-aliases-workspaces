@@ -20,7 +20,10 @@
     "declaration": true,
     "sourceMap": true,
     "baseUrl": ".",
-    "paths": { "baz": ["packages/baz/src"] }
+    "paths": {
+      "baz/*": ["packages/baz/src/*"],
+      "baz": ["packages/baz/src/index"]
+    }
   },
   "exclude": ["node_modules"],
   "include": []
