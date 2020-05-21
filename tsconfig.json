@@ -18,7 +18,9 @@
     "strict": true,
     "target": "esnext",
     "declaration": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "baseUrl": ".",
+    "paths": { "baz": ["packages/baz/src"] }
   },
   "exclude": ["node_modules"],
   "include": []
