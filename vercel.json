@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "regions": ["cdg"],
+  "builds": [
+    {
+      "src": "packages/web-app/package.json",
+      "use": "@vercel/next"
+    },
+    {
+      "src": "packages/another-app/index.js",
+      "use": "@vercel/node"
+    }
+  ],
+
+  "rewrites": [
+    {
+      "source": "/another(.*)",
+      "destination": "packages/another-app/index.js"
+    },
+    {
+      "source": "/((?!another).*)",
+      "destination": "/packages/web-app/$1"
+    }
+  ],
+  "trailingSlash": false,
+  "cleanUrls": true
+}
+
